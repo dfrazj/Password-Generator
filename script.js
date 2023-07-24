@@ -15,39 +15,39 @@ function getrandomarray (arr) {
 function generatePassword () {
 //Ask user how many characters the want in their password
 var passwordLength = parseInt( window.prompt("How many characters would you like your password to contain?"));
-if (Number.isNaN || passwordLength < 8 || passwordLength > 128) {
-  window.alert ("must enter a number value, and number must be greater than 8 and less than 128.")
+if (Number.isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+  alert ("must enter a number value, and number must be greater than 8 and less than 128.")
   return null
 }
 //Ask user if they want special characters in their password
 var useofspecialcharacters = window.confirm ("Click OK to confirm including special characters.");
 if (useofspecialcharacters === true) {
-  possiblePassword += specialcharacters
+  possiblePassword = possiblePassword.concat(specialcharacters) 
 }
 console.log(possiblePassword);
 //Ask user if they want numeric characters in their password
 var useofnumericcharacters = window.confirm ("Click OK to confirm including numeric characters.");
 if (useofnumericcharacters === true) {
-  possiblePassword += numbers
+  possiblePassword = possiblePassword.concat(numbers)
 }
 
 //Ask user if they want lowercase characters in their password
 var useoflowercasecharacters = window.confirm ("Click OK to confirm including lowercase characters.");
 if (useoflowercasecharacters === true) {
-  possiblePassword += lowerCaseLetters
+  possiblePassword = possiblePassword.concat(lowerCaseLetters)
 }
 
 //Ask user if they want uppercase characters in their password
 var useofuppercasecharacters = window.confirm ("Click OK to confirm including uppercase characters.");
 if (useofuppercasecharacters === true) {
-  possiblePassword += upperCaseLetters
+  possiblePassword = possiblePassword.concat(upperCaseLetters)
 }
 
 while (!useofspecialcharacters && !useofnumericcharacters && !useoflowercasecharacters && !useofuppercasecharacters) {
   window.alert ("must pick at least one option.");
   return null
 }
-for (var i = 0; i < possiblePassword.passwordLength; i++) {
+for (var i = 0; i < passwordLength; i++) {
   console.log(passwordLength);
   console.log (possiblePassword);
   var newPassword = getrandomarray(possiblePassword)
