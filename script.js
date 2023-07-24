@@ -10,15 +10,27 @@ var passwordLength = window.prompt("How many characters would you like your pass
 
 //Ask user if they want special characters in their password
 var useofspecialcharacters = window.confirm ("Click OK to confirm including special characters.");
-
+if (useofspecialcharacters === true) {
+  possiblePassword += specialcharacters
+}
 //Ask user if they want numeric characters in their password
 var useofnumericcharacters = window.confirm ("Click OK to confirm including numeric characters.");
+if (useofnumericcharacters === true) {
+  possiblePassword += numbers
+}
 
 //Ask user if they want lowercase characters in their password
 var useoflowercasecharacters = window.confirm ("Click OK to confirm including lowercase characters.");
+if (useoflowercasecharacters === true) {
+  possiblePassword += lowerCaseLetters
+}
 
 //Ask user if they want uppercase characters in their password
 var useofuppercasecharacters = window.confirm ("Click OK to confirm including uppercase characters.");
+if (useofuppercasecharacters === true) {
+  possiblePassword += upperCaseLetters
+}
+
 }
 
 // Assignment Code
