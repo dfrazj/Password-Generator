@@ -4,7 +4,7 @@ Screenshot: Below is a screenshot of part of the website:![Screenshot 2023-07-24
 
 
 
-Link to Site:
+Link to Site:https://dfrazj.github.io/Password-Generator/
 
 Installation: N/A
 
