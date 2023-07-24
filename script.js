@@ -4,12 +4,14 @@ var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n",
 var upperCaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var specialcharacters = ["!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"];
 var possiblePassword = []
+var password = []
 
 function getrandomarray (arr) {
   var randomindex = Math.floor (Math.random()*arr.length)
   var randomelement = arr[randomindex]
   return randomelement
 }
+
 function generatePassword () {
 //Ask user how many characters the want in their password
 var passwordLength = window.prompt("How many characters would you like your password to contain?");
@@ -35,6 +37,10 @@ if (useoflowercasecharacters === true) {
 var useofuppercasecharacters = window.confirm ("Click OK to confirm including uppercase characters.");
 if (useofuppercasecharacters === true) {
   possiblePassword += upperCaseLetters
+}
+
+for (var i = 0; i < possiblePassword.passwordLength; i++) {
+  
 }
 
 }
