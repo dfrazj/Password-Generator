@@ -14,13 +14,17 @@ function getrandomarray (arr) {
 
 function generatePassword () {
 //Ask user how many characters the want in their password
-var passwordLength = window.prompt("How many characters would you like your password to contain?");
-
+var passwordLength = parseInt( window.prompt("How many characters would you like your password to contain?"));
+if (Number.isNaN || passwordLength < 8 || passwordLength > 128) {
+  window.alert ("must enter a number value, and number must be greater than 8 and less than 128.")
+  return null
+}
 //Ask user if they want special characters in their password
 var useofspecialcharacters = window.confirm ("Click OK to confirm including special characters.");
 if (useofspecialcharacters === true) {
   possiblePassword += specialcharacters
 }
+console.log(possiblePassword);
 //Ask user if they want numeric characters in their password
 var useofnumericcharacters = window.confirm ("Click OK to confirm including numeric characters.");
 if (useofnumericcharacters === true) {
@@ -39,10 +43,18 @@ if (useofuppercasecharacters === true) {
   possiblePassword += upperCaseLetters
 }
 
-for (var i = 0; i < possiblePassword.passwordLength; i++) {
-  
+while (!useofspecialcharacters && !useofnumericcharacters && !useoflowercasecharacters && !useofuppercasecharacters) {
+  window.alert ("must pick at least one option.");
+  return null
 }
-
+for (var i = 0; i < possiblePassword.passwordLength; i++) {
+  console.log(passwordLength);
+  console.log (possiblePassword);
+  var newPassword = getrandomarray(possiblePassword)
+  console.log (newPassword);
+  password.push (newPassword)
+}
+return password.join ("")
 }
 
 // Assignment Code
